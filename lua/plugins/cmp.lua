@@ -9,23 +9,20 @@ return {
         build = ":Codeium Auth",
         opts = {},
       },
-      {
-        "supermaven-inc/supermaven-nvim",
-        -- config = function()
-        -- 	require("supermaven-nvim").setup({})
-        -- end,
-        opts = {},
-      },
+      -- {
+      --   "supermaven-inc/supermaven-nvim",
+      --   opts = {},
+      -- },
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, 1, {
         name = "codeium",
         group_index = 1,
-        priority = 100,
+        priority = 10,
       })
       table.insert(opts.sources, 2, {
-        name = "supermaven",
+        -- name = "supermaven",
         group_index = 1,
         priority = 99, -- Slightly lower priority than codeium
       })

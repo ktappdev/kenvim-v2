@@ -6,8 +6,17 @@
 local map = vim.api.nvim_set_keymap
 local builtin = require("telescope.builtin")
 
+vim.api.nvim_set_keymap("n", "gl", "$", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gh", "^", { noremap = true, silent = true })
 -- remove the highlight asfter a search
 --
+vim.keymap.set("n", "<leader>cp", "", { noremap = true, silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>cp",
+  ':let @+ = expand("%:p")<CR>:echo "Copied: " .. expand("%:p")<CR>',
+  { noremap = true, silent = true }
+)
 -- keybinds for prompting with groq
 -- vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
 -- vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
@@ -49,3 +58,20 @@ vim.keymap.set("n", "<leader>cw", '<cmd>lua require("treesj").toggle()<cr>', { d
 --   ":TailwindSortOnSaveToggle<CR>",
 --   { noremap = true, silent = true, desc = "Tailwind Sort on save toggle" }
 -- )
+--
+--
+--
+vim.keymap.set("n", "<leader>i", function()
+  require("llm").create_llm_md()
+end, { desc = "Create llm.md" })
+
+-- keybinds for prompting with groq
+-- vim.keymap.set("n", "<leader>a", function()
+--   require("llm").prompt({ replace = false, service = "groq" })
+-- end, { desc = "Prompt with groq" })
+-- vim.keymap.set("v", "<leader>a", function()
+--   require("llm").prompt({ replace = false, service = "groq" })
+-- end, { desc = "Prompt with groq" })
+-- vim.keymap.set("v", "<leader>a", function()
+--   require("llm").prompt({ replace = true, service = "groq" })
+-- end, { desc = "Prompt while replacing with groq" })
