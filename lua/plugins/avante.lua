@@ -1,7 +1,7 @@
 return {
   {
     "yetone/avante.nvim",
-    enabled = false,
+    enabled = true,
     lazy = true,
     event = "VeryLazy",
     build = "make",
@@ -10,8 +10,8 @@ return {
       provider = "openai",
       openai = {
         endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o-mini",
-        temperature = 0,
+        model = "gpt-4o",
+        temperature = 0.1,
         max_tokens = 4096,
         ["local"] = false,
       },
