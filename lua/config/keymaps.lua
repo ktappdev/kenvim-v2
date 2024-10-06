@@ -21,7 +21,6 @@ vim.keymap.set(
 -- vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
 -- vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
 -- vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "groq" }) end, { desc = "Prompt while replacing with groq" }))
-
 -- Shortcut for searching your neovim configuration files
 vim.keymap.set("n", "<leader>se", function()
   builtin.find_files({ cwd = vim.fn.stdpath("config") })
